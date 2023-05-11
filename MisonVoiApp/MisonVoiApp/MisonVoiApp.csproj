@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2AB7B06E-50CB-4D96-A96B-831B62761C8E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MisonVoiApp</RootNamespace>
+    <AssemblyName>MisonVoiApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>C:\Users\SAAD EL\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\..\..\desktop apps\framWorks\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoClientDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutoClientDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Connection.cs" />
+    <Compile Include="Employee.cs">
+      <DependentUpon>Employees.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employees.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Employees.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employees.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Employees.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employees.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Employees.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Achat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Achat.Designer.cs">
+      <DependentUpon>Achat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCarForms\AddCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCarForms\AddCar.Designer.cs">
+      <DependentUpon>AddCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCarForms\AddMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCarForms\AddMaintenance.Designer.cs">
+      <DependentUpon>AddMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCarForms\Confort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCarForms\Confort.Designer.cs">
+      <DependentUpon>Confort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCarForms\DetailEmployees .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCarForms\DetailEmployees .Designer.cs">
+      <DependentUpon>DetailEmployees .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCarForms\photo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCarForms\photo.Designer.cs">
+      <DependentUpon>photo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCarForms\Piece.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCarForms\Piece.Designer.cs">
+      <DependentUpon>Piece.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCarForms\securite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCarForms\securite.Designer.cs">
+      <DependentUpon>securite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCarForms\ShowPhotos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCarForms\ShowPhotos.Designer.cs">
+      <DependentUpon>ShowPhotos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCarForms\Technique.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCarForms\Technique.Designer.cs">
+      <DependentUpon>Technique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\addClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\addClient.Designer.cs">
+      <DependentUpon>addClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEmp.Designer.cs">
+      <DependentUpon>AddEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Adette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Adette.Designer.cs">
+      <DependentUpon>Adette.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\admin.Designer.cs">
+      <DependentUpon>admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\cache.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\cache.Designer.cs">
+      <DependentUpon>cache.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cars.Designer.cs">
+      <DependentUpon>Cars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\clients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\clients.Designer.cs">
+      <DependentUpon>clients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\employees.Designer.cs">
+      <DependentUpon>employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\homaPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\homaPage.Designer.cs">
+      <DependentUpon>homaPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainEmp.Designer.cs">
+      <DependentUpon>MainEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Maintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Maintenance.Designer.cs">
+      <DependentUpon>Maintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\specialite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\specialite.Designer.cs">
+      <DependentUpon>specialite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ventesCli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ventesCli.Designer.cs">
+      <DependentUpon>ventesCli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reporting\achatCache.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>achatCache.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporting\achatDette.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>achatDette.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporting\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="reporting\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="reporting\diagram.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>diagram.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporting\DiagrammeDette.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiagrammeDette.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporting\facture.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>facture.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporting\frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporting\frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="specialite.cs">
+      <DependentUpon>Employees.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UI\circleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\DropShaddow.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Achat.resx">
+      <DependentUpon>Achat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCarForms\AddCar.resx">
+      <DependentUpon>AddCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCarForms\AddMaintenance.resx">
+      <DependentUpon>AddMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCarForms\Confort.resx">
+      <DependentUpon>Confort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCarForms\DetailEmployees .resx">
+      <DependentUpon>DetailEmployees .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCarForms\photo.resx">
+      <DependentUpon>photo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCarForms\Piece.resx">
+      <DependentUpon>Piece.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCarForms\securite.resx">
+      <DependentUpon>securite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCarForms\ShowPhotos.resx">
+      <DependentUpon>ShowPhotos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCarForms\Technique.resx">
+      <DependentUpon>Technique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\addClient.resx">
+      <DependentUpon>addClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddEmp.resx">
+      <DependentUpon>AddEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Adette.resx">
+      <DependentUpon>Adette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\admin.resx">
+      <DependentUpon>admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\cache.resx">
+      <DependentUpon>cache.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cars.resx">
+      <DependentUpon>Cars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\clients.resx">
+      <DependentUpon>clients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\employees.resx">
+      <DependentUpon>employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\homaPage.resx">
+      <DependentUpon>homaPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainEmp.resx">
+      <DependentUpon>MainEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Maintenance.resx">
+      <DependentUpon>Maintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\specialite.resx">
+      <DependentUpon>specialite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ventesCli.resx">
+      <DependentUpon>ventesCli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="reporting\achatCache.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>achatCache.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\achatDette.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>achatDette.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\diagram.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>diagram.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\DiagrammeDette.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DiagrammeDette.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\facture.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>facture.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="AutoClientDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>AutoClientDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AutoClientDB.dbml.layout">
+      <DependentUpon>AutoClientDB.dbml</DependentUpon>
+    </None>
+    <EntityDeploy Include="Employees.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Employees.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Employees.edmx.diagram">
+      <DependentUpon>Employees.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="reporting\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="reporting\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="reporting\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Employees.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Employees.edmx</DependentUpon>
+      <LastGenOutput>Employees.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Employees.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Employees.edmx</DependentUpon>
+      <LastGenOutput>Employees.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\9c4904c7730fde517a3d2fba6641ff0c.gif" />
+    <None Include="Resources\apps.14212.9007199266419762.56b9557e-4dc3-49a7-a9be-5fc3204dba85.png" />
+    <Content Include="UI\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

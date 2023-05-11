@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MaisonAutoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MaisonAutoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Employees" EntityType="MaisonAutoModel.Employee" />
+    <EntitySet Name="maintenances" EntityType="MaisonAutoModel.maintenance" />
+    <EntitySet Name="specialites" EntityType="MaisonAutoModel.specialite" />
+    <AssociationSet Name="con_for_special" Association="MaisonAutoModel.con_for_special">
+      <End Role="specialite" EntitySet="specialites" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="detailMaintenanceEmp" Association="MaisonAutoModel.detailMaintenanceEmp">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="maintenance" EntitySet="maintenances" />
+    </AssociationSet>
+    <AssociationSet Name="con_for_special1" Association="MaisonAutoModel.con_for_special1">
+      <End Role="specialite" EntitySet="specialites" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="idEmployee" />
+    </Key>
+    <Property Name="idEmployee" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomCompletEmp" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dateNaissance" Type="DateTime" Precision="0" />
+    <Property Name="adresse" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="numberPhone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="idspecialites" Type="Int32" />
+    <NavigationProperty Name="specialite" Relationship="MaisonAutoModel.con_for_special" FromRole="Employee" ToRole="specialite" />
+    <NavigationProperty Name="maintenances" Relationship="MaisonAutoModel.detailMaintenanceEmp" FromRole="Employee" ToRole="maintenance" />
+    <NavigationProperty Name="specialite1" Relationship="MaisonAutoModel.con_for_special1" FromRole="Employee" ToRole="specialite" />
+  </EntityType>
+  <EntityType Name="maintenance">
+    <Key>
+      <PropertyRef Name="idMaintenance" />
+    </Key>
+    <Property Name="idMaintenance" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateMintenance" Type="DateTime" Precision="0" />
+    <Property Name="description" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="idVoiture" Type="Int32" />
+    <Property Name="idClient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employees" Relationship="MaisonAutoModel.detailMaintenanceEmp" FromRole="maintenance" ToRole="Employee" />
+    <Property Name="totalMain" Type="Double" />
+  </EntityType>
+  <EntityType Name="specialite">
+    <Key>
+      <PropertyRef Name="idSpecialites" />
+      <PropertyRef Name="idSpec" />
+    </Key>
+    <Property Name="idSpecialites" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomSpecialites" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employees" Relationship="MaisonAutoModel.con_for_special" FromRole="specialite" ToRole="Employee" />
+    <Property Name="idSpec" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Employees1" Relationship="MaisonAutoModel.con_for_special1" FromRole="specialite" ToRole="Employee" />
+  </EntityType>
+  <Association Name="con_for_special">
+    <End Type="MaisonAutoModel.specialite" Role="specialite" Multiplicity="0..1" />
+    <End Type="MaisonAutoModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="specialite">
+        <PropertyRef Name="idSpecialites" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="idspecialites" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="detailMaintenanceEmp">
+    <End Type="MaisonAutoModel.Employee" Role="Employee" Multiplicity="*" />
+    <End Type="MaisonAutoModel.maintenance" Role="maintenance" Multiplicity="*" />
+  </Association>
+  <Association Name="con_for_special1">
+    <End Type="MaisonAutoModel.specialite" Role="specialite" Multiplicity="0..1" />
+    <End Type="MaisonAutoModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="specialite">
+        <PropertyRef Name="idSpec" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="idspecialites" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

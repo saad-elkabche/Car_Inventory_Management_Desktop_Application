@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MaisonAutoModelStoreContainer" CdmEntityContainer="MaisonAutoEntities">
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="MaisonAutoModel.Employee">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="idspecialites" ColumnName="idspecialites" />
+          <ScalarProperty Name="numberPhone" ColumnName="numberPhone" />
+          <ScalarProperty Name="adresse" ColumnName="adresse" />
+          <ScalarProperty Name="dateNaissance" ColumnName="dateNaissance" />
+          <ScalarProperty Name="nomCompletEmp" ColumnName="nomCompletEmp" />
+          <ScalarProperty Name="idEmployee" ColumnName="idEmployee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="maintenances">
+      <EntityTypeMapping TypeName="MaisonAutoModel.maintenance">
+        <MappingFragment StoreEntitySet="maintenance">
+          <ScalarProperty Name="totalMain" ColumnName="totalMain" />
+          <ScalarProperty Name="idClient" ColumnName="idClient" />
+          <ScalarProperty Name="idVoiture" ColumnName="idVoiture" />
+          <ScalarProperty Name="dateMintenance" ColumnName="dateMintenance" />
+          <ScalarProperty Name="idMaintenance" ColumnName="idMaintenance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="specialites">
+      <EntityTypeMapping TypeName="MaisonAutoModel.specialite">
+        <MappingFragment StoreEntitySet="specialites">
+          <ScalarProperty Name="idSpec" ColumnName="idSpec" />
+          <ScalarProperty Name="nomSpecialites" ColumnName="nomSpecialites" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="detailMaintenanceEmp" TypeName="MaisonAutoModel.detailMaintenanceEmp" StoreEntitySet="detailMaintenanceEmp">
+      <EndProperty Name="maintenance">
+        <ScalarProperty Name="idMaintenance" ColumnName="idMaintenance" />
+      </EndProperty>
+      <EndProperty Name="Employee">
+        <ScalarProperty Name="idEmployee" ColumnName="idEmplyee" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

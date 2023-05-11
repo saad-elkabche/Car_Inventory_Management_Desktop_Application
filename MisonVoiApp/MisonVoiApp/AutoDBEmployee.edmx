@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MaisonAutoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="detailMaintenanceEmp">
+          <Key>
+            <PropertyRef Name="idMaintenance" />
+            <PropertyRef Name="idEmplyee" />
+          </Key>
+          <Property Name="idMaintenance" Type="int" Nullable="false" />
+          <Property Name="idEmplyee" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="idEmployee" />
+          </Key>
+          <Property Name="idEmployee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomCompletEmp" Type="varchar" MaxLength="100" />
+          <Property Name="dateNaissance" Type="date" />
+          <Property Name="adresse" Type="varchar" MaxLength="100" />
+          <Property Name="numberPhone" Type="varchar" MaxLength="100" />
+          <Property Name="idspecialites" Type="int" />
+        </EntityType>
+        <EntityType Name="maintenance">
+          <Key>
+            <PropertyRef Name="idMaintenance" />
+          </Key>
+          <Property Name="idMaintenance" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dateMintenance" Type="date" />
+          <Property Name="description" Type="varchar" MaxLength="2000" />
+          <Property Name="idVoiture" Type="int" />
+          <Property Name="idClient" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="specialites">
+          <Key>
+            <PropertyRef Name="idSpecialites" />
+          </Key>
+          <Property Name="idSpecialites" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomSpecialites" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="con_for_special">
+          <End Role="specialites" Type="Self.specialites" Multiplicity="0..1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="specialites">
+              <PropertyRef Name="idSpecialites" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="idspecialites" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="conFor_detail_emp_">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="detailMaintenanceEmp" Type="Self.detailMaintenanceEmp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="idEmployee" />
+            </Principal>
+            <Dependent Role="detailMaintenanceEmp">
+              <PropertyRef Name="idEmplyee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="conFor_detail_main_">
+          <End Role="maintenance" Type="Self.maintenance" Multiplicity="1" />
+          <End Role="detailMaintenanceEmp" Type="Self.detailMaintenanceEmp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maintenance">
+              <PropertyRef Name="idMaintenance" />
+            </Principal>
+            <Dependent Role="detailMaintenanceEmp">
+              <PropertyRef Name="idMaintenance" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MaisonAutoModelStoreContainer">
+          <EntitySet Name="detailMaintenanceEmp" EntityType="Self.detailMaintenanceEmp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="maintenance" EntityType="Self.maintenance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="specialites" EntityType="Self.specialites" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="con_for_special" Association="Self.con_for_special">
+            <End Role="specialites" EntitySet="specialites" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="conFor_detail_emp_" Association="Self.conFor_detail_emp_">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="detailMaintenanceEmp" EntitySet="detailMaintenanceEmp" />
+          </AssociationSet>
+          <AssociationSet Name="conFor_detail_main_" Association="Self.conFor_detail_main_">
+            <End Role="maintenance" EntitySet="maintenance" />
+            <End Role="detailMaintenanceEmp" EntitySet="detailMaintenanceEmp" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MaisonAutoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MaisonAutoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Employees" EntityType="MaisonAutoModel.Employee" />
+          <EntitySet Name="maintenances" EntityType="MaisonAutoModel.maintenance" />
+          <EntitySet Name="specialites" EntityType="MaisonAutoModel.specialite" />
+          <AssociationSet Name="con_for_special" Association="MaisonAutoModel.con_for_special">
+            <End Role="specialite" EntitySet="specialites" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="detailMaintenanceEmp" Association="MaisonAutoModel.detailMaintenanceEmp">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="maintenance" EntitySet="maintenances" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="idEmployee" />
+          </Key>
+          <Property Name="idEmployee" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomCompletEmp" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="dateNaissance" Type="DateTime" Precision="0" />
+          <Property Name="adresse" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="numberPhone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="idspecialites" Type="Int32" />
+          <NavigationProperty Name="specialite" Relationship="MaisonAutoModel.con_for_special" FromRole="Employee" ToRole="specialite" />
+          <NavigationProperty Name="maintenances" Relationship="MaisonAutoModel.detailMaintenanceEmp" FromRole="Employee" ToRole="maintenance" />
+        </EntityType>
+        <EntityType Name="maintenance">
+          <Key>
+            <PropertyRef Name="idMaintenance" />
+          </Key>
+          <Property Name="idMaintenance" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dateMintenance" Type="DateTime" Precision="0" />
+          <Property Name="description" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="idVoiture" Type="Int32" />
+          <Property Name="idClient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employees" Relationship="MaisonAutoModel.detailMaintenanceEmp" FromRole="maintenance" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="specialite">
+          <Key>
+            <PropertyRef Name="idSpecialites" />
+          </Key>
+          <Property Name="idSpecialites" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomSpecialites" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employees" Relationship="MaisonAutoModel.con_for_special" FromRole="specialite" ToRole="Employee" />
+        </EntityType>
+        <Association Name="con_for_special">
+          <End Type="MaisonAutoModel.specialite" Role="specialite" Multiplicity="0..1" />
+          <End Type="MaisonAutoModel.Employee" Role="Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="specialite">
+              <PropertyRef Name="idSpecialites" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="idspecialites" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="detailMaintenanceEmp">
+          <End Type="MaisonAutoModel.Employee" Role="Employee" Multiplicity="*" />
+          <End Type="MaisonAutoModel.maintenance" Role="maintenance" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MaisonAutoModelStoreContainer" CdmEntityContainer="MaisonAutoEntities">
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="MaisonAutoModel.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="idspecialites" ColumnName="idspecialites" />
+                <ScalarProperty Name="numberPhone" ColumnName="numberPhone" />
+                <ScalarProperty Name="adresse" ColumnName="adresse" />
+                <ScalarProperty Name="dateNaissance" ColumnName="dateNaissance" />
+                <ScalarProperty Name="nomCompletEmp" ColumnName="nomCompletEmp" />
+                <ScalarProperty Name="idEmployee" ColumnName="idEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="maintenances">
+            <EntityTypeMapping TypeName="MaisonAutoModel.maintenance">
+              <MappingFragment StoreEntitySet="maintenance">
+                <ScalarProperty Name="idClient" ColumnName="idClient" />
+                <ScalarProperty Name="idVoiture" ColumnName="idVoiture" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="dateMintenance" ColumnName="dateMintenance" />
+                <ScalarProperty Name="idMaintenance" ColumnName="idMaintenance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="specialites">
+            <EntityTypeMapping TypeName="MaisonAutoModel.specialite">
+              <MappingFragment StoreEntitySet="specialites">
+                <ScalarProperty Name="nomSpecialites" ColumnName="nomSpecialites" />
+                <ScalarProperty Name="idSpecialites" ColumnName="idSpecialites" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="detailMaintenanceEmp" TypeName="MaisonAutoModel.detailMaintenanceEmp" StoreEntitySet="detailMaintenanceEmp">
+            <EndProperty Name="maintenance">
+              <ScalarProperty Name="idMaintenance" ColumnName="idMaintenance" />
+            </EndProperty>
+            <EndProperty Name="Employee">
+              <ScalarProperty Name="idEmployee" ColumnName="idEmplyee" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

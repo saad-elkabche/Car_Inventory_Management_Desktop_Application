@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MaisonAutoModelStoreContainer" CdmEntityContainer="MaisonAutoEntities1">
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="MaisonAutoModel.Employee">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="idEmployee" ColumnName="idEmployee" />
+          <ScalarProperty Name="nomCompletEmp" ColumnName="nomCompletEmp" />
+          <ScalarProperty Name="dateNaissance" ColumnName="dateNaissance" />
+          <ScalarProperty Name="adresse" ColumnName="adresse" />
+          <ScalarProperty Name="numberPhone" ColumnName="numberPhone" />
+          <ScalarProperty Name="idspecialites" ColumnName="idspecialites" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="specialites">
+      <EntityTypeMapping TypeName="MaisonAutoModel.specialite">
+        <MappingFragment StoreEntitySet="specialites">
+          <ScalarProperty Name="idSpec" ColumnName="idSpec" />
+          <ScalarProperty Name="nomSpecialites" ColumnName="nomSpecialites" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

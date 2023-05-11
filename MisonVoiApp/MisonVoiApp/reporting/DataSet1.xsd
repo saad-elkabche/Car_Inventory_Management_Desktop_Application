@@ -1,0 +1,612 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MaisonAutoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MaisonAutoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MisonVoiApp.Properties.Settings.GlobalReference.Default.MaisonAutoConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="achatCacheAdapter" GeneratorDataComponentClassName="achatCacheAdapter" Name="achatCache" UserDataComponentName="achatCacheAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MaisonAutoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT AchatCache.idClient, AchatCache.idVoiture, AchatCache.achatDate, AchatCache.remisePromotionelle, AchatCache.fraisMatriculation, AchatCache.autreFrais, AchatCache.totalAchat, AchatCache.jrsGarantis, client.CINclient, 
+                  client.nomCompletClient, client.phoneNumber, client.adresse, client.dateNaissance, client.occupation, client.photo, voiture.idVoiture AS Expr1, voiture.modele, voiture.annne, voiture.carburant, voiture.puissanceFiscale, 
+                  voiture.puissanceReelle, voiture.boiteVitesses, voiture.nbRapports, voiture.consomation, voiture.emissionCO2, voiture.categorie, voiture.nombre_portes, voiture.coffre, voiture.airbag, voiture.ABS, voiture.EPS, voiture.alarme, 
+                  voiture.Antidemmarrage, voiture.Antipatinage, voiture.regulateurVitesse, voiture.fermetureOuvrant, voiture.AideStationement, voiture.ControlElectriquePressionPneus, voiture.AideFreinageUrgence, voiture.climatisation, 
+                  voiture.retroviseursElectriques, voiture.volantMultiFonctions, voiture.detecteurPluis, voiture.ordinateurBord, voiture.GPS, voiture.ecranTactile, voiture.startStop, voiture.demarrageSansCle, voiture.cameraRecul, 
+                  voiture.radarSattionnement, voiture.climAutomatique, voiture.freinMainElectrique, voiture.status, voiture.image1, voiture.image2, voiture.image3
+FROM     AchatCache INNER JOIN
+                  client ON client.CINclient = AchatCache.idClient INNER JOIN
+                  voiture ON voiture.idVoiture = AchatCache.idVoiture</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idClient" DataSetColumn="idClient" />
+              <Mapping SourceColumn="idVoiture" DataSetColumn="idVoiture" />
+              <Mapping SourceColumn="achatDate" DataSetColumn="achatDate" />
+              <Mapping SourceColumn="remisePromotionelle" DataSetColumn="remisePromotionelle" />
+              <Mapping SourceColumn="fraisMatriculation" DataSetColumn="fraisMatriculation" />
+              <Mapping SourceColumn="autreFrais" DataSetColumn="autreFrais" />
+              <Mapping SourceColumn="totalAchat" DataSetColumn="totalAchat" />
+              <Mapping SourceColumn="jrsGarantis" DataSetColumn="jrsGarantis" />
+              <Mapping SourceColumn="CINclient" DataSetColumn="CINclient" />
+              <Mapping SourceColumn="nomCompletClient" DataSetColumn="nomCompletClient" />
+              <Mapping SourceColumn="phoneNumber" DataSetColumn="phoneNumber" />
+              <Mapping SourceColumn="adresse" DataSetColumn="adresse" />
+              <Mapping SourceColumn="dateNaissance" DataSetColumn="dateNaissance" />
+              <Mapping SourceColumn="occupation" DataSetColumn="occupation" />
+              <Mapping SourceColumn="photo" DataSetColumn="photo" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="modele" DataSetColumn="modele" />
+              <Mapping SourceColumn="annne" DataSetColumn="annne" />
+              <Mapping SourceColumn="carburant" DataSetColumn="carburant" />
+              <Mapping SourceColumn="puissanceFiscale" DataSetColumn="puissanceFiscale" />
+              <Mapping SourceColumn="puissanceReelle" DataSetColumn="puissanceReelle" />
+              <Mapping SourceColumn="boiteVitesses" DataSetColumn="boiteVitesses" />
+              <Mapping SourceColumn="nbRapports" DataSetColumn="nbRapports" />
+              <Mapping SourceColumn="consomation" DataSetColumn="consomation" />
+              <Mapping SourceColumn="emissionCO2" DataSetColumn="emissionCO2" />
+              <Mapping SourceColumn="categorie" DataSetColumn="categorie" />
+              <Mapping SourceColumn="nombre_portes" DataSetColumn="nombre_portes" />
+              <Mapping SourceColumn="coffre" DataSetColumn="coffre" />
+              <Mapping SourceColumn="airbag" DataSetColumn="airbag" />
+              <Mapping SourceColumn="ABS" DataSetColumn="ABS" />
+              <Mapping SourceColumn="EPS" DataSetColumn="EPS" />
+              <Mapping SourceColumn="alarme" DataSetColumn="alarme" />
+              <Mapping SourceColumn="Antidemmarrage" DataSetColumn="Antidemmarrage" />
+              <Mapping SourceColumn="Antipatinage" DataSetColumn="Antipatinage" />
+              <Mapping SourceColumn="regulateurVitesse" DataSetColumn="regulateurVitesse" />
+              <Mapping SourceColumn="fermetureOuvrant" DataSetColumn="fermetureOuvrant" />
+              <Mapping SourceColumn="AideStationement" DataSetColumn="AideStationement" />
+              <Mapping SourceColumn="ControlElectriquePressionPneus" DataSetColumn="ControlElectriquePressionPneus" />
+              <Mapping SourceColumn="AideFreinageUrgence" DataSetColumn="AideFreinageUrgence" />
+              <Mapping SourceColumn="climatisation" DataSetColumn="climatisation" />
+              <Mapping SourceColumn="retroviseursElectriques" DataSetColumn="retroviseursElectriques" />
+              <Mapping SourceColumn="volantMultiFonctions" DataSetColumn="volantMultiFonctions" />
+              <Mapping SourceColumn="detecteurPluis" DataSetColumn="detecteurPluis" />
+              <Mapping SourceColumn="ordinateurBord" DataSetColumn="ordinateurBord" />
+              <Mapping SourceColumn="GPS" DataSetColumn="GPS" />
+              <Mapping SourceColumn="ecranTactile" DataSetColumn="ecranTactile" />
+              <Mapping SourceColumn="startStop" DataSetColumn="startStop" />
+              <Mapping SourceColumn="demarrageSansCle" DataSetColumn="demarrageSansCle" />
+              <Mapping SourceColumn="cameraRecul" DataSetColumn="cameraRecul" />
+              <Mapping SourceColumn="radarSattionnement" DataSetColumn="radarSattionnement" />
+              <Mapping SourceColumn="climAutomatique" DataSetColumn="climAutomatique" />
+              <Mapping SourceColumn="freinMainElectrique" DataSetColumn="freinMainElectrique" />
+              <Mapping SourceColumn="status" DataSetColumn="status" />
+              <Mapping SourceColumn="image1" DataSetColumn="image1" />
+              <Mapping SourceColumn="image2" DataSetColumn="image2" />
+              <Mapping SourceColumn="image3" DataSetColumn="image3" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="achatLoyersAdapter" GeneratorDataComponentClassName="achatLoyersAdapter" Name="achatLoyers" UserDataComponentName="achatLoyersAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MaisonAutoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT AchatLoyers.idClient, AchatLoyers.idVoiture, AchatLoyers.dateAchat, AchatLoyers.prixVoiture, AchatLoyers.ApportClientTTC, AchatLoyers.nbLoyers, AchatLoyers.LoyerTTC, AchatLoyers.AssurenceMensuelle, 
+                  AchatLoyers.coutGlobalTTC, AchatLoyers.jrsGarantis, client.CINclient, client.nomCompletClient, client.dateNaissance, client.adresse, client.photo, client.occupation, voiture.modele, voiture.annne, voiture.puissanceFiscale, 
+                  voiture.carburant
+FROM     AchatLoyers INNER JOIN
+                  client ON AchatLoyers.idClient = client.CINclient INNER JOIN
+                  voiture ON AchatLoyers.idVoiture = voiture.idVoiture</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idClient" DataSetColumn="idClient" />
+              <Mapping SourceColumn="idVoiture" DataSetColumn="idVoiture" />
+              <Mapping SourceColumn="dateAchat" DataSetColumn="dateAchat" />
+              <Mapping SourceColumn="ApportClientTTC" DataSetColumn="ApportClientTTC" />
+              <Mapping SourceColumn="nbLoyers" DataSetColumn="nbLoyers" />
+              <Mapping SourceColumn="LoyerTTC" DataSetColumn="LoyerTTC" />
+              <Mapping SourceColumn="AssurenceMensuelle" DataSetColumn="AssurenceMensuelle" />
+              <Mapping SourceColumn="coutGlobalTTC" DataSetColumn="coutGlobalTTC" />
+              <Mapping SourceColumn="jrsGarantis" DataSetColumn="jrsGarantis" />
+              <Mapping SourceColumn="CINclient" DataSetColumn="CINclient" />
+              <Mapping SourceColumn="nomCompletClient" DataSetColumn="nomCompletClient" />
+              <Mapping SourceColumn="dateNaissance" DataSetColumn="dateNaissance" />
+              <Mapping SourceColumn="adresse" DataSetColumn="adresse" />
+              <Mapping SourceColumn="occupation" DataSetColumn="occupation" />
+              <Mapping SourceColumn="modele" DataSetColumn="modele" />
+              <Mapping SourceColumn="annne" DataSetColumn="annne" />
+              <Mapping SourceColumn="puissanceFiscale" DataSetColumn="puissanceFiscale" />
+              <Mapping SourceColumn="carburant" DataSetColumn="carburant" />
+              <Mapping SourceColumn="photo" DataSetColumn="photo" />
+              <Mapping SourceColumn="prixVoiture" DataSetColumn="prixVoiture" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="diagrammeBarCacheAdapter" GeneratorDataComponentClassName="diagrammeBarCacheAdapter" Name="diagrammeBarCache" UserDataComponentName="diagrammeBarCacheAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MaisonAutoConnectionString (Settings)" DbObjectName="MaisonAuto.dbo.client" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT client.CINclient, client.nomCompletClient, SUM(AchatCache.totalAchat) AS total
+FROM     AchatCache INNER JOIN
+                  client ON AchatCache.idClient = client.CINclient
+GROUP BY client.CINclient, client.nomCompletClient</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CINclient" DataSetColumn="CINclient" />
+              <Mapping SourceColumn="nomCompletClient" DataSetColumn="nomCompletClient" />
+              <Mapping SourceColumn="total" DataSetColumn="total" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="diagrammeDetteAdapter" GeneratorDataComponentClassName="diagrammeDetteAdapter" Name="diagrammeBarDette" UserDataComponentName="diagrammeDetteAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MaisonAutoConnectionString (Settings)" DbObjectName="MaisonAuto.dbo.client" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT client.CINclient, client.nomCompletClient, SUM(AchatLoyers.prixVoiture) AS total
+FROM     AchatLoyers INNER JOIN
+                  client ON AchatLoyers.idClient = client.CINclient
+GROUP BY client.CINclient, client.nomCompletClient</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CINclient" DataSetColumn="CINclient" />
+              <Mapping SourceColumn="nomCompletClient" DataSetColumn="nomCompletClient" />
+              <Mapping SourceColumn="total" DataSetColumn="total" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PieceTableAdapter" GeneratorDataComponentClassName="PieceTableAdapter" Name="Piece" UserDataComponentName="PieceTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MaisonAutoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select piece.nomPiece,piece.prix,maintenanceDetailPiece.idMaintenance from piece join maintenanceDetailPiece on maintenanceDetailPiece.idPiece=piece.idPiece</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nomPiece" DataSetColumn="nomPiece" />
+              <Mapping SourceColumn="prix" DataSetColumn="prix" />
+              <Mapping SourceColumn="idMaintenance" DataSetColumn="idMaintenance" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Emp1TableAdapter" GeneratorDataComponentClassName="Emp1TableAdapter" Name="Emp" UserDataComponentName="Emp1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MaisonAutoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select Employees.nomCompletEmp,specialites.nomSpecialites,detailMaintenanceEmp.idMaintenance from Employees join detailMaintenanceEmp on detailMaintenanceEmp.idEmplyee=Employees.idEmployee
+join specialites on Employees.idEmployee=specialites.idSpec
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nomCompletEmp" DataSetColumn="nomCompletEmp" />
+              <Mapping SourceColumn="nomSpecialites" DataSetColumn="nomSpecialites" />
+              <Mapping SourceColumn="idMaintenance" DataSetColumn="idMaintenance" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="maintenanceTableAdapter" GeneratorDataComponentClassName="maintenanceTableAdapter" Name="maintenance" UserDataComponentName="maintenanceTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MaisonAutoConnectionString (Settings)" DbObjectName="MaisonAuto.dbo.maintenance" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [maintenance] WHERE (([idMaintenance] = @Original_idMaintenance) AND ((@IsNull_dateMintenance = 1 AND [dateMintenance] IS NULL) OR ([dateMintenance] = @Original_dateMintenance)) AND ((@IsNull_idVoiture = 1 AND [idVoiture] IS NULL) OR ([idVoiture] = @Original_idVoiture)) AND ((@IsNull_idClient = 1 AND [idClient] IS NULL) OR ([idClient] = @Original_idClient)) AND ((@IsNull_totalMain = 1 AND [totalMain] IS NULL) OR ([totalMain] = @Original_totalMain)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idMaintenance" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idMaintenance" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_dateMintenance" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="dateMintenance" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_dateMintenance" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dateMintenance" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_idVoiture" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idVoiture" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idVoiture" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idVoiture" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_idClient" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idClient" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_idClient" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="idClient" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_totalMain" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="totalMain" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_totalMain" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="totalMain" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [maintenance] ([dateMintenance], [idVoiture], [idClient], [totalMain]) VALUES (@dateMintenance, @idVoiture, @idClient, @totalMain);
+SELECT idMaintenance, dateMintenance, idVoiture, idClient, totalMain FROM maintenance WHERE (idMaintenance = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@dateMintenance" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dateMintenance" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idVoiture" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idVoiture" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@idClient" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="idClient" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@totalMain" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="totalMain" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from maintenance</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [maintenance] SET [dateMintenance] = @dateMintenance, [idVoiture] = @idVoiture, [idClient] = @idClient, [totalMain] = @totalMain WHERE (([idMaintenance] = @Original_idMaintenance) AND ((@IsNull_dateMintenance = 1 AND [dateMintenance] IS NULL) OR ([dateMintenance] = @Original_dateMintenance)) AND ((@IsNull_idVoiture = 1 AND [idVoiture] IS NULL) OR ([idVoiture] = @Original_idVoiture)) AND ((@IsNull_idClient = 1 AND [idClient] IS NULL) OR ([idClient] = @Original_idClient)) AND ((@IsNull_totalMain = 1 AND [totalMain] IS NULL) OR ([totalMain] = @Original_totalMain)));
+SELECT idMaintenance, dateMintenance, idVoiture, idClient, totalMain FROM maintenance WHERE (idMaintenance = @idMaintenance)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@dateMintenance" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dateMintenance" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idVoiture" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idVoiture" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@idClient" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="idClient" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@totalMain" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="totalMain" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idMaintenance" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idMaintenance" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_dateMintenance" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="dateMintenance" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_dateMintenance" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dateMintenance" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_idVoiture" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idVoiture" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idVoiture" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idVoiture" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_idClient" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idClient" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_idClient" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="idClient" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_totalMain" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="totalMain" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_totalMain" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="totalMain" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idMaintenance" ColumnName="idMaintenance" DataSourceName="MaisonAuto.dbo.maintenance" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idMaintenance" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idMaintenance" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idMaintenance" DataSetColumn="idMaintenance" />
+              <Mapping SourceColumn="dateMintenance" DataSetColumn="dateMintenance" />
+              <Mapping SourceColumn="idVoiture" DataSetColumn="idVoiture" />
+              <Mapping SourceColumn="idClient" DataSetColumn="idClient" />
+              <Mapping SourceColumn="totalMain" DataSetColumn="totalMain" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="achatCache" msprop:Generator_TableClassName="achatCacheDataTable" msprop:Generator_TableVarName="tableachatCache" msprop:Generator_RowChangedName="achatCacheRowChanged" msprop:Generator_TablePropName="achatCache" msprop:Generator_RowDeletingName="achatCacheRowDeleting" msprop:Generator_RowChangingName="achatCacheRowChanging" msprop:Generator_RowEvHandlerName="achatCacheRowChangeEventHandler" msprop:Generator_RowDeletedName="achatCacheRowDeleted" msprop:Generator_RowClassName="achatCacheRow" msprop:Generator_UserTableName="achatCache" msprop:Generator_RowEvArgName="achatCacheRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idClient" msprop:Generator_ColumnVarNameInTable="columnidClient" msprop:Generator_ColumnPropNameInRow="idClient" msprop:Generator_ColumnPropNameInTable="idClientColumn" msprop:Generator_UserColumnName="idClient">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idVoiture" msprop:Generator_ColumnVarNameInTable="columnidVoiture" msprop:Generator_ColumnPropNameInRow="idVoiture" msprop:Generator_ColumnPropNameInTable="idVoitureColumn" msprop:Generator_UserColumnName="idVoiture" type="xs:int" />
+              <xs:element name="achatDate" msprop:Generator_ColumnVarNameInTable="columnachatDate" msprop:Generator_ColumnPropNameInRow="achatDate" msprop:Generator_ColumnPropNameInTable="achatDateColumn" msprop:Generator_UserColumnName="achatDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="remisePromotionelle" msprop:Generator_ColumnVarNameInTable="columnremisePromotionelle" msprop:Generator_ColumnPropNameInRow="remisePromotionelle" msprop:Generator_ColumnPropNameInTable="remisePromotionelleColumn" msprop:Generator_UserColumnName="remisePromotionelle" type="xs:double" minOccurs="0" />
+              <xs:element name="fraisMatriculation" msprop:Generator_ColumnVarNameInTable="columnfraisMatriculation" msprop:Generator_ColumnPropNameInRow="fraisMatriculation" msprop:Generator_ColumnPropNameInTable="fraisMatriculationColumn" msprop:Generator_UserColumnName="fraisMatriculation" type="xs:double" minOccurs="0" />
+              <xs:element name="autreFrais" msprop:Generator_ColumnVarNameInTable="columnautreFrais" msprop:Generator_ColumnPropNameInRow="autreFrais" msprop:Generator_ColumnPropNameInTable="autreFraisColumn" msprop:Generator_UserColumnName="autreFrais" type="xs:double" minOccurs="0" />
+              <xs:element name="totalAchat" msprop:Generator_ColumnVarNameInTable="columntotalAchat" msprop:Generator_ColumnPropNameInRow="totalAchat" msprop:Generator_ColumnPropNameInTable="totalAchatColumn" msprop:Generator_UserColumnName="totalAchat" type="xs:double" minOccurs="0" />
+              <xs:element name="jrsGarantis" msprop:Generator_ColumnVarNameInTable="columnjrsGarantis" msprop:Generator_ColumnPropNameInRow="jrsGarantis" msprop:Generator_ColumnPropNameInTable="jrsGarantisColumn" msprop:Generator_UserColumnName="jrsGarantis" type="xs:int" minOccurs="0" />
+              <xs:element name="CINclient" msprop:Generator_ColumnVarNameInTable="columnCINclient" msprop:Generator_ColumnPropNameInRow="CINclient" msprop:Generator_ColumnPropNameInTable="CINclientColumn" msprop:Generator_UserColumnName="CINclient">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomCompletClient" msprop:Generator_ColumnVarNameInTable="columnnomCompletClient" msprop:Generator_ColumnPropNameInRow="nomCompletClient" msprop:Generator_ColumnPropNameInTable="nomCompletClientColumn" msprop:Generator_UserColumnName="nomCompletClient" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="phoneNumber" msprop:Generator_ColumnVarNameInTable="columnphoneNumber" msprop:Generator_ColumnPropNameInRow="phoneNumber" msprop:Generator_ColumnPropNameInTable="phoneNumberColumn" msprop:Generator_UserColumnName="phoneNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="adresse" msprop:Generator_ColumnVarNameInTable="columnadresse" msprop:Generator_ColumnPropNameInRow="adresse" msprop:Generator_ColumnPropNameInTable="adresseColumn" msprop:Generator_UserColumnName="adresse" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dateNaissance" msprop:Generator_ColumnVarNameInTable="columndateNaissance" msprop:Generator_ColumnPropNameInRow="dateNaissance" msprop:Generator_ColumnPropNameInTable="dateNaissanceColumn" msprop:Generator_UserColumnName="dateNaissance" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="occupation" msprop:Generator_ColumnVarNameInTable="columnoccupation" msprop:Generator_ColumnPropNameInRow="occupation" msprop:Generator_ColumnPropNameInTable="occupationColumn" msprop:Generator_UserColumnName="occupation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="photo" msprop:Generator_ColumnVarNameInTable="columnphoto" msprop:Generator_ColumnPropNameInRow="photo" msprop:Generator_ColumnPropNameInTable="photoColumn" msprop:Generator_UserColumnName="photo" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="Expr1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" />
+              <xs:element name="modele" msprop:Generator_ColumnVarNameInTable="columnmodele" msprop:Generator_ColumnPropNameInRow="modele" msprop:Generator_ColumnPropNameInTable="modeleColumn" msprop:Generator_UserColumnName="modele" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="annne" msprop:Generator_ColumnVarNameInTable="columnannne" msprop:Generator_ColumnPropNameInRow="annne" msprop:Generator_ColumnPropNameInTable="annneColumn" msprop:Generator_UserColumnName="annne" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="carburant" msprop:Generator_ColumnVarNameInTable="columncarburant" msprop:Generator_ColumnPropNameInRow="carburant" msprop:Generator_ColumnPropNameInTable="carburantColumn" msprop:Generator_UserColumnName="carburant" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="puissanceFiscale" msprop:Generator_ColumnVarNameInTable="columnpuissanceFiscale" msprop:Generator_ColumnPropNameInRow="puissanceFiscale" msprop:Generator_ColumnPropNameInTable="puissanceFiscaleColumn" msprop:Generator_UserColumnName="puissanceFiscale" type="xs:int" minOccurs="0" />
+              <xs:element name="puissanceReelle" msprop:Generator_ColumnVarNameInTable="columnpuissanceReelle" msprop:Generator_ColumnPropNameInRow="puissanceReelle" msprop:Generator_ColumnPropNameInTable="puissanceReelleColumn" msprop:Generator_UserColumnName="puissanceReelle" type="xs:int" minOccurs="0" />
+              <xs:element name="boiteVitesses" msprop:Generator_ColumnVarNameInTable="columnboiteVitesses" msprop:Generator_ColumnPropNameInRow="boiteVitesses" msprop:Generator_ColumnPropNameInTable="boiteVitessesColumn" msprop:Generator_UserColumnName="boiteVitesses" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nbRapports" msprop:Generator_ColumnVarNameInTable="columnnbRapports" msprop:Generator_ColumnPropNameInRow="nbRapports" msprop:Generator_ColumnPropNameInTable="nbRapportsColumn" msprop:Generator_UserColumnName="nbRapports" type="xs:short" minOccurs="0" />
+              <xs:element name="consomation" msprop:Generator_ColumnVarNameInTable="columnconsomation" msprop:Generator_ColumnPropNameInRow="consomation" msprop:Generator_ColumnPropNameInTable="consomationColumn" msprop:Generator_UserColumnName="consomation" type="xs:double" minOccurs="0" />
+              <xs:element name="emissionCO2" msprop:Generator_ColumnVarNameInTable="columnemissionCO2" msprop:Generator_ColumnPropNameInRow="emissionCO2" msprop:Generator_ColumnPropNameInTable="emissionCO2Column" msprop:Generator_UserColumnName="emissionCO2" type="xs:int" minOccurs="0" />
+              <xs:element name="categorie" msprop:Generator_ColumnVarNameInTable="columncategorie" msprop:Generator_ColumnPropNameInRow="categorie" msprop:Generator_ColumnPropNameInTable="categorieColumn" msprop:Generator_UserColumnName="categorie" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_portes" msprop:Generator_ColumnVarNameInTable="columnnombre_portes" msprop:Generator_ColumnPropNameInRow="nombre_portes" msprop:Generator_ColumnPropNameInTable="nombre_portesColumn" msprop:Generator_UserColumnName="nombre_portes" type="xs:short" minOccurs="0" />
+              <xs:element name="coffre" msprop:Generator_ColumnVarNameInTable="columncoffre" msprop:Generator_ColumnPropNameInRow="coffre" msprop:Generator_ColumnPropNameInTable="coffreColumn" msprop:Generator_UserColumnName="coffre" type="xs:int" minOccurs="0" />
+              <xs:element name="airbag" msprop:Generator_ColumnVarNameInTable="columnairbag" msprop:Generator_ColumnPropNameInRow="airbag" msprop:Generator_ColumnPropNameInTable="airbagColumn" msprop:Generator_UserColumnName="airbag" type="xs:short" minOccurs="0" />
+              <xs:element name="ABS" msprop:Generator_ColumnVarNameInTable="columnABS" msprop:Generator_ColumnPropNameInRow="ABS" msprop:Generator_ColumnPropNameInTable="ABSColumn" msprop:Generator_UserColumnName="ABS" type="xs:short" minOccurs="0" />
+              <xs:element name="EPS" msprop:Generator_ColumnVarNameInTable="columnEPS" msprop:Generator_ColumnPropNameInRow="EPS" msprop:Generator_ColumnPropNameInTable="EPSColumn" msprop:Generator_UserColumnName="EPS" type="xs:short" minOccurs="0" />
+              <xs:element name="alarme" msprop:Generator_ColumnVarNameInTable="columnalarme" msprop:Generator_ColumnPropNameInRow="alarme" msprop:Generator_ColumnPropNameInTable="alarmeColumn" msprop:Generator_UserColumnName="alarme" type="xs:short" minOccurs="0" />
+              <xs:element name="Antidemmarrage" msprop:Generator_ColumnVarNameInTable="columnAntidemmarrage" msprop:Generator_ColumnPropNameInRow="Antidemmarrage" msprop:Generator_ColumnPropNameInTable="AntidemmarrageColumn" msprop:Generator_UserColumnName="Antidemmarrage" type="xs:short" minOccurs="0" />
+              <xs:element name="Antipatinage" msprop:Generator_ColumnVarNameInTable="columnAntipatinage" msprop:Generator_ColumnPropNameInRow="Antipatinage" msprop:Generator_ColumnPropNameInTable="AntipatinageColumn" msprop:Generator_UserColumnName="Antipatinage" type="xs:short" minOccurs="0" />
+              <xs:element name="regulateurVitesse" msprop:Generator_ColumnVarNameInTable="columnregulateurVitesse" msprop:Generator_ColumnPropNameInRow="regulateurVitesse" msprop:Generator_ColumnPropNameInTable="regulateurVitesseColumn" msprop:Generator_UserColumnName="regulateurVitesse" type="xs:short" minOccurs="0" />
+              <xs:element name="fermetureOuvrant" msprop:Generator_ColumnVarNameInTable="columnfermetureOuvrant" msprop:Generator_ColumnPropNameInRow="fermetureOuvrant" msprop:Generator_ColumnPropNameInTable="fermetureOuvrantColumn" msprop:Generator_UserColumnName="fermetureOuvrant" type="xs:short" minOccurs="0" />
+              <xs:element name="AideStationement" msprop:Generator_ColumnVarNameInTable="columnAideStationement" msprop:Generator_ColumnPropNameInRow="AideStationement" msprop:Generator_ColumnPropNameInTable="AideStationementColumn" msprop:Generator_UserColumnName="AideStationement" type="xs:short" minOccurs="0" />
+              <xs:element name="ControlElectriquePressionPneus" msprop:Generator_ColumnVarNameInTable="columnControlElectriquePressionPneus" msprop:Generator_ColumnPropNameInRow="ControlElectriquePressionPneus" msprop:Generator_ColumnPropNameInTable="ControlElectriquePressionPneusColumn" msprop:Generator_UserColumnName="ControlElectriquePressionPneus" type="xs:short" minOccurs="0" />
+              <xs:element name="AideFreinageUrgence" msprop:Generator_ColumnVarNameInTable="columnAideFreinageUrgence" msprop:Generator_ColumnPropNameInRow="AideFreinageUrgence" msprop:Generator_ColumnPropNameInTable="AideFreinageUrgenceColumn" msprop:Generator_UserColumnName="AideFreinageUrgence" type="xs:short" minOccurs="0" />
+              <xs:element name="climatisation" msprop:Generator_ColumnVarNameInTable="columnclimatisation" msprop:Generator_ColumnPropNameInRow="climatisation" msprop:Generator_ColumnPropNameInTable="climatisationColumn" msprop:Generator_UserColumnName="climatisation" type="xs:short" minOccurs="0" />
+              <xs:element name="retroviseursElectriques" msprop:Generator_ColumnVarNameInTable="columnretroviseursElectriques" msprop:Generator_ColumnPropNameInRow="retroviseursElectriques" msprop:Generator_ColumnPropNameInTable="retroviseursElectriquesColumn" msprop:Generator_UserColumnName="retroviseursElectriques" type="xs:short" minOccurs="0" />
+              <xs:element name="volantMultiFonctions" msprop:Generator_ColumnVarNameInTable="columnvolantMultiFonctions" msprop:Generator_ColumnPropNameInRow="volantMultiFonctions" msprop:Generator_ColumnPropNameInTable="volantMultiFonctionsColumn" msprop:Generator_UserColumnName="volantMultiFonctions" type="xs:short" minOccurs="0" />
+              <xs:element name="detecteurPluis" msprop:Generator_ColumnVarNameInTable="columndetecteurPluis" msprop:Generator_ColumnPropNameInRow="detecteurPluis" msprop:Generator_ColumnPropNameInTable="detecteurPluisColumn" msprop:Generator_UserColumnName="detecteurPluis" type="xs:short" minOccurs="0" />
+              <xs:element name="ordinateurBord" msprop:Generator_ColumnVarNameInTable="columnordinateurBord" msprop:Generator_ColumnPropNameInRow="ordinateurBord" msprop:Generator_ColumnPropNameInTable="ordinateurBordColumn" msprop:Generator_UserColumnName="ordinateurBord" type="xs:short" minOccurs="0" />
+              <xs:element name="GPS" msprop:Generator_ColumnVarNameInTable="columnGPS" msprop:Generator_ColumnPropNameInRow="GPS" msprop:Generator_ColumnPropNameInTable="GPSColumn" msprop:Generator_UserColumnName="GPS" type="xs:short" minOccurs="0" />
+              <xs:element name="ecranTactile" msprop:Generator_ColumnVarNameInTable="columnecranTactile" msprop:Generator_ColumnPropNameInRow="ecranTactile" msprop:Generator_ColumnPropNameInTable="ecranTactileColumn" msprop:Generator_UserColumnName="ecranTactile" type="xs:short" minOccurs="0" />
+              <xs:element name="startStop" msprop:Generator_ColumnVarNameInTable="columnstartStop" msprop:Generator_ColumnPropNameInRow="startStop" msprop:Generator_ColumnPropNameInTable="startStopColumn" msprop:Generator_UserColumnName="startStop" type="xs:short" minOccurs="0" />
+              <xs:element name="demarrageSansCle" msprop:Generator_ColumnVarNameInTable="columndemarrageSansCle" msprop:Generator_ColumnPropNameInRow="demarrageSansCle" msprop:Generator_ColumnPropNameInTable="demarrageSansCleColumn" msprop:Generator_UserColumnName="demarrageSansCle" type="xs:short" minOccurs="0" />
+              <xs:element name="cameraRecul" msprop:Generator_ColumnVarNameInTable="columncameraRecul" msprop:Generator_ColumnPropNameInRow="cameraRecul" msprop:Generator_ColumnPropNameInTable="cameraReculColumn" msprop:Generator_UserColumnName="cameraRecul" type="xs:short" minOccurs="0" />
+              <xs:element name="radarSattionnement" msprop:Generator_ColumnVarNameInTable="columnradarSattionnement" msprop:Generator_ColumnPropNameInRow="radarSattionnement" msprop:Generator_ColumnPropNameInTable="radarSattionnementColumn" msprop:Generator_UserColumnName="radarSattionnement" type="xs:short" minOccurs="0" />
+              <xs:element name="climAutomatique" msprop:Generator_ColumnVarNameInTable="columnclimAutomatique" msprop:Generator_ColumnPropNameInRow="climAutomatique" msprop:Generator_ColumnPropNameInTable="climAutomatiqueColumn" msprop:Generator_UserColumnName="climAutomatique" type="xs:short" minOccurs="0" />
+              <xs:element name="freinMainElectrique" msprop:Generator_ColumnVarNameInTable="columnfreinMainElectrique" msprop:Generator_ColumnPropNameInRow="freinMainElectrique" msprop:Generator_ColumnPropNameInTable="freinMainElectriqueColumn" msprop:Generator_UserColumnName="freinMainElectrique" type="xs:short" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="image1" msprop:Generator_ColumnVarNameInTable="columnimage1" msprop:Generator_ColumnPropNameInRow="image1" msprop:Generator_ColumnPropNameInTable="image1Column" msprop:Generator_UserColumnName="image1" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="image2" msprop:Generator_ColumnVarNameInTable="columnimage2" msprop:Generator_ColumnPropNameInRow="image2" msprop:Generator_ColumnPropNameInTable="image2Column" msprop:Generator_UserColumnName="image2" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="image3" msprop:Generator_ColumnVarNameInTable="columnimage3" msprop:Generator_ColumnPropNameInRow="image3" msprop:Generator_ColumnPropNameInTable="image3Column" msprop:Generator_UserColumnName="image3" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="achatLoyers" msprop:Generator_TableClassName="achatLoyersDataTable" msprop:Generator_TableVarName="tableachatLoyers" msprop:Generator_TablePropName="achatLoyers" msprop:Generator_RowDeletingName="achatLoyersRowDeleting" msprop:Generator_RowChangingName="achatLoyersRowChanging" msprop:Generator_RowEvHandlerName="achatLoyersRowChangeEventHandler" msprop:Generator_RowDeletedName="achatLoyersRowDeleted" msprop:Generator_UserTableName="achatLoyers" msprop:Generator_RowChangedName="achatLoyersRowChanged" msprop:Generator_RowEvArgName="achatLoyersRowChangeEvent" msprop:Generator_RowClassName="achatLoyersRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idClient" msprop:Generator_ColumnVarNameInTable="columnidClient" msprop:Generator_ColumnPropNameInRow="idClient" msprop:Generator_ColumnPropNameInTable="idClientColumn" msprop:Generator_UserColumnName="idClient">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idVoiture" msprop:Generator_ColumnVarNameInTable="columnidVoiture" msprop:Generator_ColumnPropNameInRow="idVoiture" msprop:Generator_ColumnPropNameInTable="idVoitureColumn" msprop:Generator_UserColumnName="idVoiture" type="xs:int" />
+              <xs:element name="dateAchat" msprop:Generator_ColumnVarNameInTable="columndateAchat" msprop:Generator_ColumnPropNameInRow="dateAchat" msprop:Generator_ColumnPropNameInTable="dateAchatColumn" msprop:Generator_UserColumnName="dateAchat" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ApportClientTTC" msprop:Generator_ColumnVarNameInTable="columnApportClientTTC" msprop:Generator_ColumnPropNameInRow="ApportClientTTC" msprop:Generator_ColumnPropNameInTable="ApportClientTTCColumn" msprop:Generator_UserColumnName="ApportClientTTC" type="xs:double" minOccurs="0" />
+              <xs:element name="nbLoyers" msprop:Generator_ColumnVarNameInTable="columnnbLoyers" msprop:Generator_ColumnPropNameInRow="nbLoyers" msprop:Generator_ColumnPropNameInTable="nbLoyersColumn" msprop:Generator_UserColumnName="nbLoyers" type="xs:int" minOccurs="0" />
+              <xs:element name="LoyerTTC" msprop:Generator_ColumnVarNameInTable="columnLoyerTTC" msprop:Generator_ColumnPropNameInRow="LoyerTTC" msprop:Generator_ColumnPropNameInTable="LoyerTTCColumn" msprop:Generator_UserColumnName="LoyerTTC" type="xs:double" minOccurs="0" />
+              <xs:element name="AssurenceMensuelle" msprop:Generator_ColumnVarNameInTable="columnAssurenceMensuelle" msprop:Generator_ColumnPropNameInRow="AssurenceMensuelle" msprop:Generator_ColumnPropNameInTable="AssurenceMensuelleColumn" msprop:Generator_UserColumnName="AssurenceMensuelle" type="xs:double" minOccurs="0" />
+              <xs:element name="coutGlobalTTC" msprop:Generator_ColumnVarNameInTable="columncoutGlobalTTC" msprop:Generator_ColumnPropNameInRow="coutGlobalTTC" msprop:Generator_ColumnPropNameInTable="coutGlobalTTCColumn" msprop:Generator_UserColumnName="coutGlobalTTC" type="xs:double" minOccurs="0" />
+              <xs:element name="jrsGarantis" msprop:Generator_ColumnVarNameInTable="columnjrsGarantis" msprop:Generator_ColumnPropNameInRow="jrsGarantis" msprop:Generator_ColumnPropNameInTable="jrsGarantisColumn" msprop:Generator_UserColumnName="jrsGarantis" type="xs:int" minOccurs="0" />
+              <xs:element name="CINclient" msprop:Generator_ColumnVarNameInTable="columnCINclient" msprop:Generator_ColumnPropNameInRow="CINclient" msprop:Generator_ColumnPropNameInTable="CINclientColumn" msprop:Generator_UserColumnName="CINclient">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomCompletClient" msprop:Generator_ColumnVarNameInTable="columnnomCompletClient" msprop:Generator_ColumnPropNameInRow="nomCompletClient" msprop:Generator_ColumnPropNameInTable="nomCompletClientColumn" msprop:Generator_UserColumnName="nomCompletClient" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dateNaissance" msprop:Generator_ColumnVarNameInTable="columndateNaissance" msprop:Generator_ColumnPropNameInRow="dateNaissance" msprop:Generator_ColumnPropNameInTable="dateNaissanceColumn" msprop:Generator_UserColumnName="dateNaissance" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="adresse" msprop:Generator_ColumnVarNameInTable="columnadresse" msprop:Generator_ColumnPropNameInRow="adresse" msprop:Generator_ColumnPropNameInTable="adresseColumn" msprop:Generator_UserColumnName="adresse" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="occupation" msprop:Generator_ColumnVarNameInTable="columnoccupation" msprop:Generator_ColumnPropNameInRow="occupation" msprop:Generator_ColumnPropNameInTable="occupationColumn" msprop:Generator_UserColumnName="occupation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="modele" msprop:Generator_ColumnVarNameInTable="columnmodele" msprop:Generator_ColumnPropNameInRow="modele" msprop:Generator_ColumnPropNameInTable="modeleColumn" msprop:Generator_UserColumnName="modele" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="annne" msprop:Generator_ColumnVarNameInTable="columnannne" msprop:Generator_ColumnPropNameInRow="annne" msprop:Generator_ColumnPropNameInTable="annneColumn" msprop:Generator_UserColumnName="annne" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="puissanceFiscale" msprop:Generator_ColumnVarNameInTable="columnpuissanceFiscale" msprop:Generator_ColumnPropNameInRow="puissanceFiscale" msprop:Generator_ColumnPropNameInTable="puissanceFiscaleColumn" msprop:Generator_UserColumnName="puissanceFiscale" type="xs:int" minOccurs="0" />
+              <xs:element name="carburant" msprop:Generator_ColumnVarNameInTable="columncarburant" msprop:Generator_ColumnPropNameInRow="carburant" msprop:Generator_ColumnPropNameInTable="carburantColumn" msprop:Generator_UserColumnName="carburant" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="photo" msprop:Generator_ColumnVarNameInTable="columnphoto" msprop:Generator_ColumnPropNameInRow="photo" msprop:Generator_ColumnPropNameInTable="photoColumn" msprop:Generator_UserColumnName="photo" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="prixVoiture" msprop:Generator_ColumnVarNameInTable="columnprixVoiture" msprop:Generator_ColumnPropNameInRow="prixVoiture" msprop:Generator_ColumnPropNameInTable="prixVoitureColumn" msprop:Generator_UserColumnName="prixVoiture" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="diagrammeBarCache" msprop:Generator_TableClassName="diagrammeBarCacheDataTable" msprop:Generator_TableVarName="tablediagrammeBarCache" msprop:Generator_TablePropName="diagrammeBarCache" msprop:Generator_RowDeletingName="diagrammeBarCacheRowDeleting" msprop:Generator_RowChangingName="diagrammeBarCacheRowChanging" msprop:Generator_RowEvHandlerName="diagrammeBarCacheRowChangeEventHandler" msprop:Generator_RowDeletedName="diagrammeBarCacheRowDeleted" msprop:Generator_UserTableName="diagrammeBarCache" msprop:Generator_RowChangedName="diagrammeBarCacheRowChanged" msprop:Generator_RowEvArgName="diagrammeBarCacheRowChangeEvent" msprop:Generator_RowClassName="diagrammeBarCacheRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CINclient" msprop:Generator_ColumnVarNameInTable="columnCINclient" msprop:Generator_ColumnPropNameInRow="CINclient" msprop:Generator_ColumnPropNameInTable="CINclientColumn" msprop:Generator_UserColumnName="CINclient">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomCompletClient" msprop:Generator_ColumnVarNameInTable="columnnomCompletClient" msprop:Generator_ColumnPropNameInRow="nomCompletClient" msprop:Generator_ColumnPropNameInTable="nomCompletClientColumn" msprop:Generator_UserColumnName="nomCompletClient" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="diagrammeBarDette" msprop:Generator_TableClassName="diagrammeBarDetteDataTable" msprop:Generator_TableVarName="tablediagrammeBarDette" msprop:Generator_RowChangedName="diagrammeBarDetteRowChanged" msprop:Generator_TablePropName="diagrammeBarDette" msprop:Generator_RowDeletingName="diagrammeBarDetteRowDeleting" msprop:Generator_RowChangingName="diagrammeBarDetteRowChanging" msprop:Generator_RowEvHandlerName="diagrammeBarDetteRowChangeEventHandler" msprop:Generator_RowDeletedName="diagrammeBarDetteRowDeleted" msprop:Generator_RowClassName="diagrammeBarDetteRow" msprop:Generator_UserTableName="diagrammeBarDette" msprop:Generator_RowEvArgName="diagrammeBarDetteRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CINclient" msprop:Generator_ColumnVarNameInTable="columnCINclient" msprop:Generator_ColumnPropNameInRow="CINclient" msprop:Generator_ColumnPropNameInTable="CINclientColumn" msprop:Generator_UserColumnName="CINclient">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomCompletClient" msprop:Generator_ColumnVarNameInTable="columnnomCompletClient" msprop:Generator_ColumnPropNameInRow="nomCompletClient" msprop:Generator_ColumnPropNameInTable="nomCompletClientColumn" msprop:Generator_UserColumnName="nomCompletClient" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Piece" msprop:Generator_TableClassName="PieceDataTable" msprop:Generator_TableVarName="tablePiece" msprop:Generator_RowChangedName="PieceRowChanged" msprop:Generator_TablePropName="Piece" msprop:Generator_RowDeletingName="PieceRowDeleting" msprop:Generator_RowChangingName="PieceRowChanging" msprop:Generator_RowEvHandlerName="PieceRowChangeEventHandler" msprop:Generator_RowDeletedName="PieceRowDeleted" msprop:Generator_RowClassName="PieceRow" msprop:Generator_UserTableName="Piece" msprop:Generator_RowEvArgName="PieceRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nomPiece" msprop:Generator_ColumnVarNameInTable="columnnomPiece" msprop:Generator_ColumnPropNameInRow="nomPiece" msprop:Generator_ColumnPropNameInTable="nomPieceColumn" msprop:Generator_UserColumnName="nomPiece" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="prix" msprop:Generator_ColumnVarNameInTable="columnprix" msprop:Generator_ColumnPropNameInRow="prix" msprop:Generator_ColumnPropNameInTable="prixColumn" msprop:Generator_UserColumnName="prix" type="xs:double" minOccurs="0" />
+              <xs:element name="idMaintenance" msprop:Generator_ColumnVarNameInTable="columnidMaintenance" msprop:Generator_ColumnPropNameInRow="idMaintenance" msprop:Generator_ColumnPropNameInTable="idMaintenanceColumn" msprop:Generator_UserColumnName="idMaintenance" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Emp" msprop:Generator_TableClassName="EmpDataTable" msprop:Generator_TableVarName="tableEmp" msprop:Generator_RowChangedName="EmpRowChanged" msprop:Generator_TablePropName="Emp" msprop:Generator_RowDeletingName="EmpRowDeleting" msprop:Generator_RowChangingName="EmpRowChanging" msprop:Generator_RowEvHandlerName="EmpRowChangeEventHandler" msprop:Generator_RowDeletedName="EmpRowDeleted" msprop:Generator_RowClassName="EmpRow" msprop:Generator_UserTableName="Emp" msprop:Generator_RowEvArgName="EmpRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nomCompletEmp" msprop:Generator_ColumnVarNameInTable="columnnomCompletEmp" msprop:Generator_ColumnPropNameInRow="nomCompletEmp" msprop:Generator_ColumnPropNameInTable="nomCompletEmpColumn" msprop:Generator_UserColumnName="nomCompletEmp" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomSpecialites" msprop:Generator_ColumnVarNameInTable="columnnomSpecialites" msprop:Generator_ColumnPropNameInRow="nomSpecialites" msprop:Generator_ColumnPropNameInTable="nomSpecialitesColumn" msprop:Generator_UserColumnName="nomSpecialites" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idMaintenance" msprop:Generator_ColumnVarNameInTable="columnidMaintenance" msprop:Generator_ColumnPropNameInRow="idMaintenance" msprop:Generator_ColumnPropNameInTable="idMaintenanceColumn" msprop:Generator_UserColumnName="idMaintenance" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="maintenance" msprop:Generator_TableClassName="maintenanceDataTable" msprop:Generator_TableVarName="tablemaintenance" msprop:Generator_TablePropName="maintenance" msprop:Generator_RowDeletingName="maintenanceRowDeleting" msprop:Generator_RowChangingName="maintenanceRowChanging" msprop:Generator_RowEvHandlerName="maintenanceRowChangeEventHandler" msprop:Generator_RowDeletedName="maintenanceRowDeleted" msprop:Generator_UserTableName="maintenance" msprop:Generator_RowChangedName="maintenanceRowChanged" msprop:Generator_RowEvArgName="maintenanceRowChangeEvent" msprop:Generator_RowClassName="maintenanceRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idMaintenance" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidMaintenance" msprop:Generator_ColumnPropNameInRow="idMaintenance" msprop:Generator_ColumnPropNameInTable="idMaintenanceColumn" msprop:Generator_UserColumnName="idMaintenance" type="xs:int" />
+              <xs:element name="dateMintenance" msprop:Generator_ColumnVarNameInTable="columndateMintenance" msprop:Generator_ColumnPropNameInRow="dateMintenance" msprop:Generator_ColumnPropNameInTable="dateMintenanceColumn" msprop:Generator_UserColumnName="dateMintenance" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="idVoiture" msprop:Generator_ColumnVarNameInTable="columnidVoiture" msprop:Generator_ColumnPropNameInRow="idVoiture" msprop:Generator_ColumnPropNameInTable="idVoitureColumn" msprop:Generator_UserColumnName="idVoiture" type="xs:int" minOccurs="0" />
+              <xs:element name="idClient" msprop:Generator_ColumnVarNameInTable="columnidClient" msprop:Generator_ColumnPropNameInRow="idClient" msprop:Generator_ColumnPropNameInTable="idClientColumn" msprop:Generator_UserColumnName="idClient" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="totalMain" msprop:Generator_ColumnVarNameInTable="columntotalMain" msprop:Generator_ColumnPropNameInRow="totalMain" msprop:Generator_ColumnPropNameInTable="totalMainColumn" msprop:Generator_UserColumnName="totalMain" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:achatCache" />
+      <xs:field xpath="mstns:idClient" />
+      <xs:field xpath="mstns:idVoiture" />
+      <xs:field xpath="mstns:CINclient" />
+      <xs:field xpath="mstns:Expr1" />
+    </xs:unique>
+    <xs:unique name="diagrammeBarCache_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:diagrammeBarCache" />
+      <xs:field xpath="mstns:CINclient" />
+    </xs:unique>
+    <xs:unique name="diagrammeBarDette_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:diagrammeBarDette" />
+      <xs:field xpath="mstns:CINclient" />
+    </xs:unique>
+    <xs:unique name="maintenance_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:maintenance" />
+      <xs:field xpath="mstns:idMaintenance" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MaisonAuto" Class="AutoClientDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-BLMEKEU\MSSQLSERVER1;Initial Catalog=MaisonAuto;Integrated Security=True" SettingsObjectName="MisonVoiApp.Properties.Settings" SettingsPropertyName="MaisonAutoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.client" Member="clients">
+    <Type Name="client">
+      <Column Name="CINclient" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nomCompletClient" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="phoneNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="adresse" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="dateNaissance" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="occupation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="photo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="client_AchatCache" Member="AchatCaches" ThisKey="CINclient" OtherKey="idClient" Type="AchatCache" />
+      <Association Name="client_AchatLoyer" Member="AchatLoyers" ThisKey="CINclient" OtherKey="idClient" Type="AchatLoyer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AchatCache" Member="AchatCaches">
+    <Type Name="AchatCache">
+      <Column Name="idClient" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idVoiture" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="achatDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="remisePromotionelle" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="fraisMatriculation" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="autreFrais" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="totalAchat" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="jrsGarantis" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="client_AchatCache" Member="client" ThisKey="idClient" OtherKey="CINclient" Type="client" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AchatLoyers" Member="AchatLoyers">
+    <Type Name="AchatLoyer">
+      <Column Name="idClient" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idVoiture" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dateAchat" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="prixVoiture" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ApportClientTTC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="nbLoyers" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LoyerTTC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AssurenceMensuelle" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="coutGlobalTTC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="jrsGarantis" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="client_AchatLoyer" Member="client" ThisKey="idClient" OtherKey="CINclient" Type="client" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MaisonAutoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="detailMaintenanceEmp">
+    <Key>
+      <PropertyRef Name="idMaintenance" />
+      <PropertyRef Name="idEmplyee" />
+    </Key>
+    <Property Name="idMaintenance" Type="int" Nullable="false" />
+    <Property Name="idEmplyee" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="idEmployee" />
+    </Key>
+    <Property Name="idEmployee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomCompletEmp" Type="varchar" MaxLength="100" />
+    <Property Name="dateNaissance" Type="date" />
+    <Property Name="adresse" Type="varchar" MaxLength="100" />
+    <Property Name="numberPhone" Type="varchar" MaxLength="100" />
+    <Property Name="idspecialites" Type="int" />
+  </EntityType>
+  <EntityType Name="maintenance">
+    <Key>
+      <PropertyRef Name="idMaintenance" />
+    </Key>
+    <Property Name="idMaintenance" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dateMintenance" Type="date" />
+    <Property Name="idVoiture" Type="int" />
+    <Property Name="idClient" Type="varchar" MaxLength="50" />
+    <Property Name="totalMain" Type="float" />
+  </EntityType>
+  <EntityType Name="specialites">
+    <Key>
+      <PropertyRef Name="idSpec" />
+    </Key>
+    <Property Name="idSpec" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomSpecialites" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="con_for_special">
+    <End Role="specialites" Type="Self.specialites" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="specialites">
+        <PropertyRef Name="idSpec" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="idspecialites" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="conFor_detail_emp_">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="detailMaintenanceEmp" Type="Self.detailMaintenanceEmp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="idEmployee" />
+      </Principal>
+      <Dependent Role="detailMaintenanceEmp">
+        <PropertyRef Name="idEmplyee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="conFor_detail_main_">
+    <End Role="maintenance" Type="Self.maintenance" Multiplicity="1" />
+    <End Role="detailMaintenanceEmp" Type="Self.detailMaintenanceEmp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="maintenance">
+        <PropertyRef Name="idMaintenance" />
+      </Principal>
+      <Dependent Role="detailMaintenanceEmp">
+        <PropertyRef Name="idMaintenance" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MaisonAutoModelStoreContainer">
+    <EntitySet Name="detailMaintenanceEmp" EntityType="Self.detailMaintenanceEmp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="maintenance" EntityType="Self.maintenance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="specialites" EntityType="Self.specialites" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="con_for_special" Association="Self.con_for_special">
+      <End Role="specialites" EntitySet="specialites" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="conFor_detail_emp_" Association="Self.conFor_detail_emp_">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="detailMaintenanceEmp" EntitySet="detailMaintenanceEmp" />
+    </AssociationSet>
+    <AssociationSet Name="conFor_detail_main_" Association="Self.conFor_detail_main_">
+      <End Role="maintenance" EntitySet="maintenance" />
+      <End Role="detailMaintenanceEmp" EntitySet="detailMaintenanceEmp" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

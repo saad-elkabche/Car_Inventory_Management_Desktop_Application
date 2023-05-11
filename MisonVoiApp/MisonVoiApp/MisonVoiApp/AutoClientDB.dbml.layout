@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="AutoClientDB">
+  <DataContextMoniker Name="/AutoClientDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="90b9d273-e8fb-421b-b0a8-59410509cfb2" absoluteBounds="1.75, 1.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/AutoClientDBDataContext/client" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05a28172-819a-4377-9cc5-5cbbd2d6ba00" absoluteBounds="1.7649999999999997, 1.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="786acc06-ee98-4bb6-b72a-7e83cb1b4725" absoluteBounds="5.375, 3.375, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/AutoClientDBDataContext/AchatCache" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9e3bc392-84d4-4d08-8be3-3402ecda0964" absoluteBounds="5.39, 3.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.75 : 2.20274983723958); (6.375 : 2.20274983723958); (6.375 : 3.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AutoClientDBDataContext/client/client_AchatCache" />
+      <nodes>
+        <classShapeMoniker Id="90b9d273-e8fb-421b-b0a8-59410509cfb2" />
+        <classShapeMoniker Id="786acc06-ee98-4bb6-b72a-7e83cb1b4725" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5673322b-69ab-4ea5-8b4b-2528a7d8fcd5" absoluteBounds="2, 3.875, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/AutoClientDBDataContext/AchatLoyer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1d143a62-ff8e-42a9-b43e-2eeed1ef7d9f" absoluteBounds="2.0149999999999997, 4.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.875 : 3.28049967447917); (2.875 : 3.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AutoClientDBDataContext/client/client_AchatLoyer" />
+      <nodes>
+        <classShapeMoniker Id="90b9d273-e8fb-421b-b0a8-59410509cfb2" />
+        <classShapeMoniker Id="5673322b-69ab-4ea5-8b4b-2528a7d8fcd5" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
